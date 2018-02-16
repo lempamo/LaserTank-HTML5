@@ -2,8 +2,20 @@
     <head>
         <title>LaserTank-HTML5</title>
         <script src='phaser.min.js'></script>
+        <script src='src/boot.js'></script>
+        <script src='src/preload.js'></script>
+        <style type="text/css">
+            body {
+                margin: 0;
+            }
+        </style>
     </head>
     <body>
-        
+        <script type="text/javascript">
+            var game = new Phaser.Game(603, 435, Phaser.CANVAS, 'game');
+
+            game.state.add("Boot", boot);
+            game.state.start("Boot");
+        </script>
     </body>
 </html>
