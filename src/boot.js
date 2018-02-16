@@ -8,8 +8,9 @@ boot.prototype = {
           this.game.load.image("loading_bar","assets/loading_bar.png"); 
 	},
   	create: function(){
-		//this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 		this.scale.pageAlignHorizontally = true;
+		this.scale.updateLayout();
 		this.game.state.start("Preload");
 	}
 }
