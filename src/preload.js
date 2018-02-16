@@ -7,6 +7,12 @@ preload.prototype = {
         loadingBar.anchor.setTo(0,0);
         this.load.setPreloadSprite(loadingBar);
 
-        this.game.load.binary("regular-levels", "assets/LaserTank.lvl");
+        this.game.load.audio("snd-break-anti", "/assets/sounds/break-anti.wav");
+        this.game.load.audio("snd-break-bricks", "/assets/sounds/break-bricks.wav");
+        this.game.load.audio("snd-die", "/assets/sounds/die.wav");
+        this.game.load.audio("snd-reflect", "/assets/sounds/reflect.wav");
+        this.game.load.audio("snd-shoot-anti", "/assets/sounds/shoot-anti.wav");
+
+        this.game.load.binary("levels-regular", "/assets/LaserTank.lvl");
     }
 }
