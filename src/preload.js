@@ -25,5 +25,7 @@ preload.prototype = {
         this.game.load.audio("snd-wallbump-laser", "/assets/sounds/wallbump-laser.wav");
 
         this.game.load.binary("levels-regular", "/assets/LaserTank.lvl");
+
+        this.game.load.image("tiles24", "/assets/tiles24.png");
     }
 }
