@@ -7,8 +7,8 @@ var ltgame = function(game){
 
 ltgame.prototype = {
     create: function(){
-        var bg = this.add.sprite(0, 0, "bg");
-        s_splash = this.add.sprite(17, 17, "startscreen");
+        var bg = this.game.add.sprite(0, 0, "bg");
+        s_splash = this.game.add.sprite(17, 17, "startscreen");
     },
     update: function(){
 
