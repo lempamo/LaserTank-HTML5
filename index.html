@@ -4,6 +4,7 @@
         <script src='phaser.min.js'></script>
         <script src='src/boot.js'></script>
         <script src='src/preload.js'></script>
+        <script src='src/game.js'></script>
         <style type="text/css">
             body {
                 margin: 0;
@@ -16,6 +17,7 @@
 
             game.state.add("Boot", boot);
             game.state.add("Preload", preload);
+            game.state.add("Game", ltgame);
             game.state.start("Boot");
         </script>
     </body>

@@ -31,5 +31,8 @@ preload.prototype = {
 
         this.game.load.spritesheet("btn-mute", "/assets/btn_mute.png", 20, 20);
         this.game.load.spritesheet("tiles24", "/assets/tiles24.png", 24, 24);
+    },
+    create: function(){
+        this.game.state.start("Game", true, false);
     }
 }
