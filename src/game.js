@@ -15,6 +15,7 @@ ltgame.prototype = {
         g_splash = this.add.group();
         var s_splash = this.add.sprite(17, 17, "startscreen", 0, g_splash);
         var g01 = this.add.sprite(20, 209, "tiles24", 0, g_splash);
+        var g02 = this.add.sprite(20, 209, "tiles24", 3, g_splash);
     },
     update: function(){
 
