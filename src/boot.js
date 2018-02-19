@@ -13,4 +13,4 @@ boot.prototype = {
 		this.scale.updateLayout();
 		this.game.state.start("Preload");
 	}
-}
+};

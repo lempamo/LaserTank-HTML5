@@ -1,16 +1,23 @@
 var ltgame = function(game){
+    curLevel = 0;
     inGame = false;
     soundEnabled = true;
 
     // Sprite Groups
     g_splash = null;
+    g_lvlselect = null;
+    g_hscores = null;
+    g_quitlvldialog = null;
 
     // Global Sprites
     btn_mute = null;
-}
+    btn_undo = null;
+};
 
 ltgame.prototype = {
+    // Main Functions
     create: function(){
+        // Splash Screen
         var bg = this.add.sprite(0, 0, "bg");
         g_splash = this.add.group();
         var s_splash = this.add.sprite(17, 17, "startscreen", 0, g_splash);
@@ -35,8 +42,24 @@ ltgame.prototype = {
         this.add.sprite(212, 353, "tiles24", 20, g_splash);
         this.add.sprite(308, 353, "tiles24", 46, g_splash);
 
+        // Main Buttons
+        btn_mute = this.add.button(434, 255, "btn-mute", this.mute, this, 0, 0, 1, 0);
+
+        // Level Selector
+        g_lvlselect = this.add.group();
     },
     update: function(){
 
+    },
+
+    // Main Button Functions
+    mute: function(){
+        if (soundEnabled) {
+            btn_mute.loadTexture("btn-unmute", 0);
+            soundEnabled = false;
+        } else {
+            btn_mute.loadTexture("btn-mute", 0);
+            soundEnabled = true;
+        }
     }
-}
+};

@@ -1,8 +1,8 @@
-var preload = function(game){}
+var preload = function(game){};
 
 preload.prototype = {
 	preload: function(){ 
-        var loadingBG = this.add.sprite(0, 0, "loading_bg")
+        var loadingBG = this.add.sprite(0, 0, "loading_bg");
         var loadingBar = this.add.sprite(57,165,"loading_bar");
         loadingBar.anchor.setTo(0,0);
         this.load.setPreloadSprite(loadingBar);
@@ -26,13 +26,14 @@ preload.prototype = {
 
         this.game.load.binary("levels-regular", "assets/LaserTank.lvl");
 
-        this.game.load.image("bg", "assets/bg.png")
+        this.game.load.image("bg", "assets/bg.png");
         this.game.load.image("startscreen", "assets/startscreen.png");
 
         this.game.load.spritesheet("btn-mute", "assets/btn_mute.png", 20, 20);
+        this.game.load.spritesheet("btn-unmute", "assets/btn_unmute.png", 20, 20);
         this.game.load.spritesheet("tiles24", "assets/tiles24.png", 24, 24);
     },
     create: function(){
         this.game.state.start("Game", true, false);
     }
-}
+};
