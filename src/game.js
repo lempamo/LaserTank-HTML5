@@ -97,6 +97,7 @@ ltgame.prototype = {
                     "diff": diff
                 };
             }
+            return levels;
         }
     }
 };
