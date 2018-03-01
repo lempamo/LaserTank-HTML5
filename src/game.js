@@ -4,6 +4,7 @@ var ltgame = function(game){
     curLevel = 0;
     curLevelPack = "default";
     inGame = false;
+    levels = [];
     userLevelPack = null;
     usingBuiltInLevels = true;
     soundEnabled = true;
@@ -73,6 +74,29 @@ ltgame.prototype = {
         if (usingBuiltInLevels) {
             var lvldata = pgame.cache.getBinary("levels-"+curLevelPack);
             var lvls = lvldata.byteLength / 576;
+            var lvlloader = new BinReader(lvldata);
+
+            for (i = 0; i < lvls; i++) {
+                var board = []
+                for (x = 0; x < 16; x++) {
+                    board[x] = [];
+                    for (y = 0; y < 16; y++) {
+                        board[x][y] = lvlloader.getUInt8();
+                    }
+                }
+                var lvltitle = lvlloader.getFixedNullTermString(31);
+                var lvldesc = lvlloader.getFixedNullTermString(256);
+                var lvlauthor = lvlloader.getFixedNullTermString(31);
+                var diff = lvlloader.getUInt8();
+                lvlloader.getUInt8();
+                levels[i] = {
+                    "board": board,
+                    "title": lvltitle,
+                    "desc": lvldesc,
+                    "author": lvlauthor,
+                    "diff": diff
+                }
+            }
         }
     }
 };

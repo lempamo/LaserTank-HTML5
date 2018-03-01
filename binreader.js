@@ -1,9 +1,17 @@
+/**
+ * Creates a new binary reader.
+ * @constructor
+ * @param {ArrayBuffer} arraybuffer 
+ */
 var BinReader = function(arraybuffer){
     dataView = new DataView(arraybuffer);
     pos = 0;
 };
 
 BinReader.prototype = {
+    /**
+     * Returns an unsigned 8-bit integer.
+     */
     getUint8: function(){
         return dataView.getUint8(pos++);
     },
@@ -15,6 +23,10 @@ BinReader.prototype = {
     getBool: function(){
         return dataView.getUint8(pos++) > 0;
     },
+    /**
+     * Returns a null-terminated string that has a maximum length.
+     * @param {number} maxlen
+     */
     getFixedNullTermString: function(maxlen){
         var str = "";
         var len = 0;
