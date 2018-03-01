@@ -12,7 +12,7 @@ BinReader.prototype = {
     /**
      * Returns an unsigned 8-bit integer.
      */
-    getUint8: function(){
+    getUInt8: function(){
         return dataView.getUint8(pos++);
     },
     getInt16LE: function(){
