@@ -77,7 +77,7 @@ ltgame.prototype = {
             var lvlloader = new BinReader(lvldata);
 
             for (i = 0; i < lvls; i++) {
-                var board = []
+                var board = [];
                 for (x = 0; x < 16; x++) {
                     board[x] = [];
                     for (y = 0; y < 16; y++) {
@@ -95,7 +95,7 @@ ltgame.prototype = {
                     "desc": lvldesc,
                     "author": lvlauthor,
                     "diff": diff
-                }
+                };
             }
         }
     }
