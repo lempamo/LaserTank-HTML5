@@ -31,7 +31,7 @@ BinReader.prototype = {
         var str = "";
         var len = 0;
         while (true) {
-            var ch = this.getUint8();
+            var ch = this.getUInt8();
             len++;
             if (ch == 13) {
                 str += "\n";
