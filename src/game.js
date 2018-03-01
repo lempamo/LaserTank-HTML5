@@ -1,6 +1,11 @@
 var ltgame = function(game){
+    pgame = game;
+
     curLevel = 0;
+    curLevelPack = "default";
     inGame = false;
+    userLevelPack = null;
+    usingBuiltInLevels = true;
     soundEnabled = true;
 
     // Sprite Groups
@@ -60,6 +65,14 @@ ltgame.prototype = {
         } else {
             btn_mute.loadTexture("btn-mute", 0);
             soundEnabled = true;
+        }
+    },
+
+    // Level Functions
+    parseLevels: function(){
+        if (usingBuiltInLevels) {
+            var lvldata = pgame.cache.getBinary("levels-"+curLevelPack);
+            var lvls = lvldata.byteLength / 576;
         }
     }
 };

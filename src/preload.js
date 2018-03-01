@@ -24,7 +24,7 @@ preload.prototype = {
         this.game.load.audio("snd-wallbump-tank", "assets/sounds/wallbump-tank.wav");
         this.game.load.audio("snd-wallbump-laser", "assets/sounds/wallbump-laser.wav");
 
-        this.game.load.binary("levels-regular", "assets/LaserTank.lvl");
+        this.game.load.binary("levels-default", "assets/LaserTank.lvl");
 
         this.game.load.image("bg", "assets/bg.png");
         this.game.load.image("startscreen", "assets/startscreen.png");
