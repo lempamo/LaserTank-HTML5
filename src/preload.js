@@ -27,6 +27,7 @@ preload.prototype = {
         this.game.load.binary("levels-default", "assets/LaserTank.lvl");
 
         this.game.load.image("bg", "assets/bg.png");
+        this.game.load.image("lvl-select", "assets/lvlselect.png");
         this.game.load.image("startscreen", "assets/startscreen.png");
 
         this.game.load.spritesheet("btn-mute", "assets/btn_mute.png", 20, 20);
