@@ -1,7 +1,7 @@
 var preload = function(game){};
 
 preload.prototype = {
-	preload: function(){ 
+	preload: function(){
         var loadingBG = this.add.sprite(0, 0, "loading_bg");
         var loadingBar = this.add.sprite(57,165,"loading_bar");
         loadingBar.anchor.setTo(0,0);
@@ -27,7 +27,9 @@ preload.prototype = {
         this.game.load.binary("levels-default", "assets/LaserTank.lvl");
 
         this.game.load.image("bg", "assets/bg.png");
-        this.game.load.image("lvl-select", "assets/lvlselect.png");
+        this.game.load.image("lvl-item", "assets/lvlitem.png");
+		this.game.load.image("lvl-item-selected", "assets/lvlitemselected.png");
+		this.game.load.image("lvl-select", "assets/lvlselect.png");
         this.game.load.image("startscreen", "assets/startscreen.png");
 
         this.game.load.spritesheet("btn-mute", "assets/btn_mute.png", 20, 20);

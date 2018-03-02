@@ -71,33 +71,41 @@ ltgame.prototype = {
 
     // Level Functions
     parseLevels: function(){
-        if (usingBuiltInLevels) {
-            var lvldata = pgame.cache.getBinary("levels-"+curLevelPack);
-            var lvls = lvldata.byteLength / 576;
-            var lvlloader = new BinReader(lvldata);
+		var lvldata;
+		var lvls;
+		var lvlloader;
 
-            for (i = 0; i < lvls; i++) {
-                var board = [];
-                for (x = 0; x < 16; x++) {
-                    board[x] = [];
-                    for (y = 0; y < 16; y++) {
-                        board[x][y] = lvlloader.getUInt8();
-                    }
+        if (usingBuiltInLevels) {
+            lvldata = pgame.cache.getBinary("levels-"+curLevelPack);
+            lvls = lvldata.byteLength / 576;
+		}
+        lvlloader = new BinReader(lvldata);
+
+        for (i = 0; i < lvls; i++) {
+            var board = [];
+            for (x = 0; x < 16; x++) {
+                board[x] = [];
+                for (y = 0; y < 16; y++) {
+                    board[x][y] = lvlloader.getUInt8();
                 }
-                var lvltitle = lvlloader.getFixedNullTermString(31);
-                var lvldesc = lvlloader.getFixedNullTermString(256);
-                var lvlauthor = lvlloader.getFixedNullTermString(31);
-                var diff = lvlloader.getUInt8();
-                lvlloader.getUInt8();
-                levels[i] = {
-                    "board": board,
-                    "title": lvltitle,
-                    "desc": lvldesc,
-                    "author": lvlauthor,
-                    "diff": diff
-                };
             }
-            return levels;
+            var lvltitle = lvlloader.getFixedNullTermString(31);
+            var lvldesc = lvlloader.getFixedNullTermString(256);
+            var lvlauthor = lvlloader.getFixedNullTermString(31);
+            var diff = lvlloader.getUInt8();
+            lvlloader.getUInt8();
+            levels[i] = {
+                "board": board,
+                "title": lvltitle,
+                "desc": lvldesc,
+                "author": lvlauthor,
+                "diff": diff
+            };
         }
-    }
+        return levels;
+    },
+
+	loadLevel: function(id){
+
+	}
 };

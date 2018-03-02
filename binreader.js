@@ -1,7 +1,7 @@
 /**
- * Creates a new binary reader.
+ * Creates a new binary file reader.
  * @constructor
- * @param {ArrayBuffer} arraybuffer 
+ * @param {ArrayBuffer} arraybuffer
  */
 var BinReader = function(arraybuffer){
     dataView = new DataView(arraybuffer);
@@ -15,14 +15,23 @@ BinReader.prototype = {
     getUInt8: function(){
         return dataView.getUint8(pos++);
     },
+
+	/**
+	 * Returns a little-endian signed 16-bit integer.
+	 */
     getInt16LE: function(){
         var v = dataView.getInt16(pos, true);
         pos += 2;
         return v;
     },
+
+	/**
+	 * Returns a boolean.
+	 */
     getBool: function(){
         return dataView.getUint8(pos++) > 0;
     },
+
     /**
      * Returns a null-terminated string that has a maximum length.
      * @param {number} maxlen
