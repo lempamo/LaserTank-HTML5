@@ -17,6 +17,13 @@ BinReader.prototype = {
     },
 
 	/**
+	 * Returns a signed 8-bit integer.
+	 */
+	getInt8: function(){
+		return dataView.getInt8(pos++);
+	},
+
+	/**
 	 * Returns a little-endian signed 16-bit integer.
 	 */
     getInt16LE: function(){

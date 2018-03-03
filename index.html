@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>LaserTank-HTML5</title>
-        <script src='phaser.min.js'></script>
-        <script src='phaser-ui-tools.js'></script>
-        <script src='binreader.js'></script>
-        <script src='src/boot.js'></script>
-        <script src='src/preload.js'></script>
-        <script src='src/game.js'></script>
+        <script src="phaser.js"></script>
+        <script src="phaser-ui-tools.js"></script>
+        <script src="binreader.js"></script>
+        <script src="src/boot.js"></script>
+        <script src="src/preload.js"></script>
+        <script src="src/game.js"></script>
         <style type="text/css">
             body {
                 margin: 0;
@@ -19,7 +20,7 @@
     </head>
     <body>
         <script type="text/javascript">
-            var game = new Phaser.Game(603, 414, Phaser.CANVAS, 'game');
+            var game = new Phaser.Game(603, 414, Phaser.CANVAS, "game");
 
             game.state.add("Boot", boot);
             game.state.add("Preload", preload);

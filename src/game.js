@@ -1,3 +1,7 @@
+/**
+ * The main game state.
+ * @param  {Phaser.Game} game [description]
+ */
 var ltgame = function(game){
     pgame = game;
 
@@ -79,8 +83,8 @@ ltgame.prototype = {
             lvldata = pgame.cache.getBinary("levels-"+curLevelPack);
             lvls = lvldata.byteLength / 576;
 		}
-        lvlloader = new BinReader(lvldata);
 
+		lvlloader = new BinReader(lvldata);
         for (i = 0; i < lvls; i++) {
             var board = [];
             for (x = 0; x < 16; x++) {
