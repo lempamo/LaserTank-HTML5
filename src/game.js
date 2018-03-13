@@ -5,7 +5,10 @@
 var ltgame = function(game){
     pgame = game;
 
-    curLevel = 0;
+	lvlBGTiles = [];
+	lvlEntityTiles = [];
+
+    curLevelId = 0;
     curLevelPack = "default";
     inGame = false;
     levels = [];
@@ -110,6 +113,19 @@ ltgame.prototype = {
     },
 
 	loadLevel: function(id){
+		for (x = 0; x < 16; x++) {
+			lvlBGTiles[x] = [];
+			lvlEntityTiles[x] = [];
 
+			for (y = 0; y < 16; y++) {
+				switch (levels[id].board[x][y]) {
+					case 3:
+						lvlBGTiles[x][y] = "WATER";
+						break;
+					default:
+						throw "Invalid tile with id " + levels[id].board[x][y] + " in level " + id;
+				}
+			}
+		}
 	}
 };
